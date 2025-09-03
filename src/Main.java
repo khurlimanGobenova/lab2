@@ -177,7 +177,7 @@ public class Main {
          * C++: pass-by-value (copy), pass-by-pointer (address passed), pass-by-reference
          * Java: always pass-by-value, but for objects the reference itself is passed by value
          * Q3: same function name, but different parameter lists
-         * Q4: a function calling itself. Base cas is a stopping condition
+         * Q4: Recursion a function calling itself. Base case is a stopping condition, prevents infinite recursion
          */
         //Comments
         //Q1
@@ -259,8 +259,24 @@ public class Main {
         //Q1: already provided
         //Q2: Async used to prevent blocking during slow operations,allowing others tasks to continue
         //Q3: In Concurrent tasks can start, run, complete at overlapping times, in parallel tasks run at the same time.
-        //Q4:
+        //Q4: Future/Promise represents a placeholder for a value that will be produced by an asynchronous operation, allowing programs to continue running while the computation completes.
 
-
+        //Exceptions
+        //Q1
+        try {
+            int age = -5;
+            if (age < 0) {
+                throw new IllegalArgumentException("Age cannot be negative.");
+            }
+            System.out.println("Age is: " + age);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+        /*Q2: try : contains the code that may throw an exception 
+              catch : handles the exception if one is thrown inside the try
+              finally: always executes
+        */
+        //Q3: Checked exceptions must be declared in the method’s throws clause. Unchecked exceptions are subclasses of RuntimeException, and they are not required to be declared or caught.
+        //Q4: Advantage: Exceptions make programs cleaner and easier to read. Disadvantage: They can add performance overhead when thrown.
     }
 }
